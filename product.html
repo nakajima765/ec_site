@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>商品詳細</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h1>売ってみたβ</h1>
+        <div class="button-container">
+          <a href="index.html" class="back-button">← 戻る</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="product-detail">
+      <section id="product-container"></section>
+
+      <section id="review-section">
+        <h3>レビューを投稿</h3>
+        <textarea
+          id="review-text"
+          placeholder="レビューを入力…"
+          rows="3"
+        ></textarea>
+        <select id="review-rating">
+          <option value="5">★★★★★ (5)</option>
+          <option value="4">★★★★☆ (4)</option>
+          <option value="3">★★★☆☆ (3)</option>
+          <option value="2">★★☆☆☆ (2)</option>
+          <option value="1">★☆☆☆☆ (1)</option>
+        </select>
+        <button id="submit-review">レビューを投稿</button>
+
+        <h3>レビュー一覧</h3>
+        <ul id="review-list"></ul>
+      </section>
+
+      <section id="recommended-products">
+        <h3>おすすめ商品</h3>
+        <div class="recommended-list"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-links">
+        <a href="#">利用規約</a>
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">お問い合わせ</a>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+      <p>&copy; 2025 売ってみたβ. All Rights Reserved.</p>
+    </footer>
+
+    <script src="product.js"></script>
+  </body>
+</html>

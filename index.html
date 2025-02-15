@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>売ってみたβ</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <header>
+      <div class="header-container">
+        <h1>売ってみたβ</h1>
+        <nav>
+          <input type="text" id="search-input" placeholder="商品を検索" />
+          <button>検索</button>
+          <button id="cart-button">
+            🛒 カート
+            <span id="cart-count" class="cart-badge">0</span>
+          </button>
+          <button><a href="add-product.html">本を追加する</a></button>
+        </nav>
+      </div>
+    </header>
+
+    <div id="cart-container" class="hidden">
+      <ul class="cart-list"></ul>
+      <button id="checkout-button">お会計</button>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <main>
+      <section class="product-list">
+        <!--JSで動的に表示-->
+      </section>
+    </main>
+    <footer>
+      <div class="footer-links">
+        <a href="#">利用規約</a>
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">お問い合わせ</a>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+      <p>&copy; 2025 売ってみたβ. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
