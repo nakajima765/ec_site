@@ -12,10 +12,10 @@ app.use(cors());
 app.use(express.json()); //JSONデータを受け取れるようにする
 
 //MONGODBに接続
-mongoose
-  .connect("mongodb://127.0.0.1:27017/ecsite")
-  .then(() => console.log("🚀 MongoDB に接続成功！"))
-  .catch((err) => console.error("⚠️ MongoDB 接続エラー:", err));
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
 
 //APIテスト用のエンドポイント
 app.get("/", (req, res) => {
