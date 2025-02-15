@@ -1,0 +1,21 @@
+# 画像フォルダを無視（Gitに追加しない）
+img/
+
+# Node.jsのパッケージ（npm installで復元できるから不要）
+node_modules/
+
+# 環境変数の設定ファイル（APIキーなどの秘密情報）
+.env
+
+# Windowsのシステムファイル（自動生成されるので不要）
+Thumbs.db
+Desktop.ini
+
+# macOSのシステムファイル（いらない）
+.DS_Store
+
+# ログファイル（デバッグ情報などで自動生成される）
+*.log
+
+# エディタの設定ファイル（VSCodeの設定をGitに入れたくないなら）
+.vscode/
