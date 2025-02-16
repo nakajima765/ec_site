@@ -27,7 +27,7 @@ document
 
     try {
       // 🚀 API に `POST` リクエストを送る
-      const response = await fetch("http://localhost:3000/products", {
+      const response = await fetch("https://ec-site-bo78.onrender.com/products", {
         method: "POST", //postはデータを登録する
         headers: { "Content-Type": "application/json" }, //送るデータを指定
         body: JSON.stringify(newProduct),
@@ -71,7 +71,7 @@ document
     formData.append("image", fileInput);
 
     try {
-      const response = await fetch("http://localhost:3000/upload", {
+      const response = await fetch("https://ec-site-bo78.onrender.com/upload", {
         method: "POST",
         body: formData,
       });
