@@ -13,9 +13,9 @@ app.use(express.json()); //JSONデータを受け取れるようにする
 
 //MONGODBに接続
 mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 //APIテスト用のエンドポイント
 app.get("/", (req, res) => {
@@ -101,3 +101,37 @@ app.post("/products", async (req, res) => {
     res.status(500).json({ error: "⚠️ サーバーエラーが発生しました" });
   }
 });
+
+//画像追加の処理ここから=======================================
+const multer = require("multer");
+const path = require("path");
+
+// 画像アップロードの設定（multer）
+const storage = multer.diskStorage({
+  destination: "uploads/", // 画像を保存するフォルダ
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname)); // ユニークなファイル名を生成
+  },
+});
+
+const upload = multer({ storage });
+
+// 📌 画像をアップロードする API エンドポイント
+app.post("/upload", upload.single("image"), (req, res) => {
+  if (!req.file) {
+    return res
+      .status(400)
+      .json({ error: "⚠️ 画像がアップロードされていません。" });
+  }
+
+  // 画像のURLを作成（Render上でもアクセスできるようにする）
+  const imageUrl = `${req.protocol}://${req.get("host")}/uploads/${
+    req.file.filename
+  }`;
+
+  res.json({ imageUrl });
+});
+
+// 📌 `uploads` フォルダを公開（画像をURLでアクセスできるようにする）
+app.use("/uploads", express.static("uploads"));
+//画像追加の処理ここまで=======================================
