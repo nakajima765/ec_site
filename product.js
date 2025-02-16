@@ -140,7 +140,7 @@ async function displayRecommendedProducts(productId) {
   }
 
   try {
-    const response = await fetch(`https://ec-site-bo78.onrender.com/products/${productId}`);
+    const response = await fetch("https://ec-site-bo78.onrender.com/products");
     const products = await response.json();
 
     const relatedProducts = products.filter((p) => p._id !== productId);
