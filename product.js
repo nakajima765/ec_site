@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 
   try {
-    const response = await fetch(`http://localhost:3000/products/${productId}`); //上のIDをもとにデータを取得
+    const response = await fetch(`https://ec-site-bo78.onrender.com/products/${productId}`); 
     const product = await response.json(); //jsonを変換して代入
     //=============================================================
     //取得したデータをHTMLに埋め込んで表示するエリアここから
@@ -140,7 +140,7 @@ async function displayRecommendedProducts(productId) {
   }
 
   try {
-    const response = await fetch("http://localhost:3000/products");
+    const response = await fetch(`https://ec-site-bo78.onrender.com/products/${productId}`);
     const products = await response.json();
 
     const relatedProducts = products.filter((p) => p._id !== productId);
@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   try {
     // 🚀 API から商品データを取得
-    const response = await fetch(`http://localhost:3000/products/${productId}`);
+    const response = await fetch(`https://ec-site-bo78.onrender.com/products/${productId}`);
     const product = await response.json();
 
     if (!product || Object.keys(product).length === 0) {
@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         try {
           const response = await fetch(
-            `http://localhost:3000/products/${productId}`,
+            `https://ec-site-bo78.onrender.com/products/${productId}`,
             {
               method: "DELETE",
             }
