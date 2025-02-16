@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   try {
     // 🚀 API から商品データを取得
-    const response = await fetch(`https://ec-site-bo78.onrender.com/products/${productId}`); //fetchでサーバーのproductsにGETリクエストを送る
+    const response = await fetch("https://ec-site-bo78.onrender.com/products"); //fetchでサーバーのproductsにGETリクエストを送る
     const products = await response.json(); //サーバーから受け取ったデータ(JSON)をJSのオブジェクトに変換
 
     // 🔄 取得したデータを HTML に追加
